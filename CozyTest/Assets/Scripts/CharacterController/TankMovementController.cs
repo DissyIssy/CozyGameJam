@@ -40,7 +40,7 @@ public class TankMovementController : MonoBehaviour
         transform.Rotate(0, moveInput.x * turnSpeed * Time.deltaTime, 0);
 
         //Move
-        Vector3 moveDir = transform.forward * moveInput.y * speed;
-        controller.Move(moveDir * Time.deltaTime);
+        movDir = transform.forward * moveInput.y * speed;
+        controller.Move(movDir * Time.deltaTime);
     }
 }
