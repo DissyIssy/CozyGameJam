@@ -15,6 +15,7 @@ public class MovementController : MonoBehaviour
 
     [SerializeField] private float walkingSpeed = 2f;
     [SerializeField] private float runSpeed = 4f;
+    [SerializeField] private float rotationFactorPerFrame = 250f;
 
     void Awake()
     {
@@ -32,6 +33,7 @@ public class MovementController : MonoBehaviour
     private void Update()
     {
         float currentSpeed;
+        handleRotation();
         
         if (isRunPressed)
         {
@@ -59,6 +61,27 @@ public class MovementController : MonoBehaviour
     void onRun(InputAction.CallbackContext context)
     {
         isRunPressed = context.ReadValueAsButton();
+    }
+
+    void handleRotation()
+    {
+        Vector3 positionToLookAt;
+        
+        positionToLookAt.x = currentMovementDirection.x;
+        positionToLookAt.y = 0.0f;
+        positionToLookAt.z = currentMovementDirection.z;
+        
+        Quaternion currentRotation = transform.rotation;
+
+        if (isMovementPressed)
+        {
+            if (currentMovementDirection.sqrMagnitude > 0.01f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationFactorPerFrame * Time.deltaTime);
+            }
+
+        }
     }
 
     //handler function to set the player input values
