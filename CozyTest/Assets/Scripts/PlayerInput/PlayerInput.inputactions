@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "PlayeInput",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "CharacterControls",
