@@ -9,10 +9,8 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("triggered2");
             activeCamera.Priority = 1;
         }
     }

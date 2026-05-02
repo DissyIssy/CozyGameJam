@@ -1,4 +1,52 @@
-﻿title: Dialogue_Snooty
+﻿title: Snooty_New
 ---
+<<declare $nextText = 0>>
 Snooty: So, you're the... What? The busboy? Your uniform is rather lacklustre.
+Snooty: I haven't even received a complimentary drink yet.
+Snooty: Dreadful service. Hmpf!
+===
+
+title: Snooty_Normal
+---
+<<set $nextText to random_range(1,3)>>
+
+<<if $nextText == 1>>
+	Snooty: The sea air smells nice but is horrible for my fur.
+<<elseif $nextText == 2>>
+	Snooty: Go on a cruise, they said. It'll be fun, they said.
+	Snooty: All I see is water, water, and more water. The... pinnacle of entertainment.
+<<elseif $nextText == 3>>
+	Snooty: Go be a darling and take a step to the left.
+	Snooty: You're standing in my sun.
+<<else>>
+	Snooty: Hmpf!
+<<endif>>
+===
+
+title: Snooty_Off
+---
+<<set $nextText to random_range(1,3)>>
+
+<<if $nextText == 1>>
+	Snooty: Oh, it's you... I think I zoned out for a moment.
+<<elseif $nextText == 2>>
+	Snooty: My head hurts a little. Maybe that last margarita was a bit too much?
+<<elseif $nextText == 3>>
+	Snooty: Say, how long have we been on the water? I... I can't seem to recall.
+	Snooty: How clumsy of me...
+<<else>>
+	Snooty: Ugh...
+<<endif>>
+===
+
+title: Snooty_Gone
+---
+<<set $nextText to random_range(1,1)>>
+
+<<if $nextText == 1>>
+	Snooty: ...
+	She seems totally unreachable.
+<<else>>
+	Snooty: ...
+<<endif>>
 ===
