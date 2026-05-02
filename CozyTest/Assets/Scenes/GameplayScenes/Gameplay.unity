@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 892677687}
   - component: {fileID: 892677688}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: PassengerInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,6 +1083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
   passengerInfo: {fileID: 11400000, guid: d87b0fd30e790714ea7029a0c389d1d4, type: 2}
   dialogueRunner: {fileID: 1733692412}
+  NPCState: 0
 --- !u!1 &1004003488
 GameObject:
   m_ObjectHideFlags: 0

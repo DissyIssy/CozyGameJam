@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Snooty
   m_EditorClassIdentifier: Assembly-CSharp::SO_PassengerInfo
   passengerName: Snooty
-  yarnID: Dialogue_Snooty
+  yarnID_New: Snooty_New
+  yarnID_TaskGiving: Snooty_TaskGiving
+  yarnID_Normal: Snooty_Normal
+  yarnID_Off: Snooty_Off
+  yarnID_Gone: Snooty_Gone

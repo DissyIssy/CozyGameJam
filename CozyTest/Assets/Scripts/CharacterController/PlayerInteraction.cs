@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Yarn.Unity;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class PlayerInteraction : MonoBehaviour
         if (other.TryGetComponent(out NPCInteraction npc))
         {
             currentNPC = npc;
-            Debug.Log("Well, hello there!");
             //Send out event for UI
         }
     }
@@ -41,8 +41,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (npc == currentNPC)
             {
+                currentNPC.StopDialouge();
                 currentNPC = null;
-                Debug.Log("BYE");
                 //Send out event for UI
             }
         }
