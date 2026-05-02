@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "PlayerInput",
+    "name": "PlayerInputActions",
     "maps": [
         {
             "name": "CharacterControls",
@@ -19,6 +19,15 @@
                     "name": "Run",
                     "type": "Button",
                     "id": "654d2af1-11ea-4c27-b5a7-b74ad3584e6d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "2ebbee00-8f2f-4ac8-ba11-29735f08293a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -111,6 +120,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "452bc2c4-a534-4803-bf78-bb1398f63801",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

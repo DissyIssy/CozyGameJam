@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    private PlayerInputActions playerInputActions;
     private CharacterController characterController;
 
     private Vector2 currentMovementInput;
@@ -19,15 +19,15 @@ public class MovementController : MonoBehaviour
 
     void Awake()
     {
-        playerInput = new PlayerInput();
+        playerInputActions = new PlayerInputActions();
         characterController = GetComponent<CharacterController>();
 
-        playerInput.CharacterControls.Move.started += onMovementInput;
-        playerInput.CharacterControls.Move.canceled += onMovementInput;
-        playerInput.CharacterControls.Move.performed += onMovementInput;
+        playerInputActions.CharacterControls.Move.started += onMovementInput;
+        playerInputActions.CharacterControls.Move.canceled += onMovementInput;
+        playerInputActions.CharacterControls.Move.performed += onMovementInput;
         
-        playerInput.CharacterControls.Run.started += onRun;
-        playerInput.CharacterControls.Run.canceled += onRun;
+        playerInputActions.CharacterControls.Run.started += onRun;
+        playerInputActions.CharacterControls.Run.canceled += onRun;
     }
 
     private void Update()
@@ -50,12 +50,12 @@ public class MovementController : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.CharacterControls.Enable();
+        playerInputActions.CharacterControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.CharacterControls.Disable();
+        playerInputActions.CharacterControls.Disable();
     }
 
     void onRun(InputAction.CallbackContext context)

@@ -9,27 +9,27 @@ public class TankMovementController : MonoBehaviour
     [SerializeField] private float turnSpeed = 180f;
     
     private CharacterController controller;
-    private PlayerInput playerInput;
+    private PlayerInputActions playerInputActions;
     
     private Vector2 moveInput;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        playerInput = new PlayerInput();
+        playerInputActions = new PlayerInputActions();
 
-        playerInput.CharacterControls.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerInput.CharacterControls.Move.canceled += ctx => moveInput = Vector2.zero;
+        playerInputActions.CharacterControls.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerInputActions.CharacterControls.Move.canceled += ctx => moveInput = Vector2.zero;
     }
 
     private void OnEnable()
     {
-        playerInput.CharacterControls.Enable();
+        playerInputActions.CharacterControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.CharacterControls.Disable();
+        playerInputActions.CharacterControls.Disable();
     }
 
     private void Update()
