@@ -1,0 +1,25 @@
+﻿title: Skipper_New
+---
+Captain Skipper: There you are! I’ve, uh… I’ve just been chatting to this lovely lady over here!
+Captain Skipper: Mingling with the guests, you know.
+===
+
+title: Skipper_TaskGiving
+---
+Captain Skipper: Why don’t you [tidy up a bit], hm?
+===
+
+title: Skipper_Normal
+---
+<<set $nextText to random_range(1,2)>>
+
+<<if $nextText == 1>>
+	Captain Skipper: Ahem! You see, this beauty of a ship has been with me for many years.
+	Captain Skipper: Sometimes I feel like it knows me better than my wife, haha!
+<<elseif $nextText == 2>>
+	Captain Skipper: Where was I…? Ah, yes! That horrible storm
+	Captain Skipper: He trails off into a story you have heard far too many times.
+<<else>>
+	Captain Skipper: Harrharr!
+<<endif>>
+===
