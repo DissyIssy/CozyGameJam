@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Passenger", menuName = "Game/Passenger")]
+[CreateAssetMenu(fileName = "New Passenger", menuName = "CozyEndtimes/New Passenger")]
 public class SO_PassengerInfo : ScriptableObject
 {
     public string passengerName;

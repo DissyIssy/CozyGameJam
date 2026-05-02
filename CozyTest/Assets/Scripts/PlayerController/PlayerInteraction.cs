@@ -6,8 +6,11 @@ using Yarn.Unity;
 public class PlayerInteraction : MonoBehaviour
 {
     private NPCInteraction currentNPC;
+    private ItemInteraction currentItem;
     private PlayerInputActions playerInputActions;
 
+    //You can surely combine the character and item interaction into a single function
+    //Also be aware in the case that both cases are true.
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -33,6 +36,12 @@ public class PlayerInteraction : MonoBehaviour
             currentNPC = npc;
             //Send out event for UI
         }
+
+        if (other.TryGetComponent(out ItemInteraction item))
+        {
+            currentItem = item;
+            //Send out event for UI
+        }
     }
     
     private void OnTriggerExit(Collider other)
@@ -46,6 +55,15 @@ public class PlayerInteraction : MonoBehaviour
                 //Send out event for UI
             }
         }
+
+        if (other.TryGetComponent(out ItemInteraction item))
+        {
+            if (item == currentItem)
+            {
+                currentItem.StopDialouge();
+                currentItem = null;
+            }
+        }
     }
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -53,6 +71,11 @@ public class PlayerInteraction : MonoBehaviour
         if (currentNPC != null)
         {
             currentNPC.InitDialogue();
+        }
+
+        if (currentItem != null)
+        {
+            currentItem.InitDialogue();
         }
     }
 }
