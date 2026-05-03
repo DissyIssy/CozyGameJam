@@ -6,5 +6,6 @@ public enum Enum_NPCState
     TaskGiving,
     Normal,
     off,
-    gone
+    gone,
+    TaskReporting
 }

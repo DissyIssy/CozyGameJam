@@ -71,11 +71,13 @@ public class PlayerInteraction : MonoBehaviour
         if (currentNPC != null)
         {
             currentNPC.InitDialogue();
+            return;
         }
 
         if (currentItem != null)
         {
             currentItem.InitDialogue();
+            currentItem.PickUp();
         }
     }
 }

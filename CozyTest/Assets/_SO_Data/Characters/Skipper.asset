@@ -18,3 +18,4 @@ MonoBehaviour:
   yarnID_Normal: Skipper_Normal
   yarnID_Off: Skipper_Off
   yarnID_Gone: Skipper_Gone
+  yarnID_TaskReporting: Skipper_TaskReporting
