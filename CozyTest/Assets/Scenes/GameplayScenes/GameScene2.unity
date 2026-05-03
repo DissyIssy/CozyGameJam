@@ -2643,10 +2643,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022002307}
     m_Modifications:
-    - target: {fileID: 6963325918539781330, guid: 425123830ad165648ada198014741991, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f206686e3dda640469f089e226f98e39, type: 2}
     - target: {fileID: 8395904891370586055, guid: 425123830ad165648ada198014741991, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.56248
@@ -2709,10 +2705,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022002307}
     m_Modifications:
-    - target: {fileID: 74210307298028833, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f206686e3dda640469f089e226f98e39, type: 2}
     - target: {fileID: 2525935757738312434, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
       propertyPath: m_Name
       value: cozyjam_env_room_hallway_a_v001
@@ -2757,14 +2749,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3555466565327545904, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f206686e3dda640469f089e226f98e39, type: 2}
-    - target: {fileID: 6373261483952748457, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f206686e3dda640469f089e226f98e39, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
