@@ -8,7 +8,14 @@ public class ItemInteraction : MonoBehaviour
 
     public void InitDialogue()
     {
-        dialogueRunner.StartDialogue(interactableInfo.yarnID_Interactable);
+        if (interactableInfo.isPickUpAble && TaskManager.Instance.taskStarted)
+        {
+            dialogueRunner.StartDialogue(interactableInfo.yarnID_PickUpDialogue);
+        }
+        else
+        {
+            dialogueRunner.StartDialogue(interactableInfo.yarnID_Interactable);
+        }
     }
     
     public void StopDialouge()
@@ -16,6 +23,22 @@ public class ItemInteraction : MonoBehaviour
         if (dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.Stop();
+        }
+    }
+
+    public void PickUp()
+    {
+        if (!TaskManager.Instance.taskStarted)
+        {
+            return;
+        }
+        
+        if (interactableInfo.isPickUpAble)
+        {
+            TaskManager.Instance.RegisterClean();
+            Debug.Log("Picked up");
+            Destroy(transform.parent.gameObject);
+            //transform.root.gameObject.SetActive(false);
         }
     }
 }

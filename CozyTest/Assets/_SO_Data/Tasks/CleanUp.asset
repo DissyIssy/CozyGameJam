@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956792b1f0570204690a79825f3b1e87, type: 3}
-  m_Name: Drink
-  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractableInfo
-  interactableName: Drink
-  yarnID_Interactable: Drink
+  m_Script: {fileID: 11500000, guid: 321ba5557d2e2524db26fa77712c29d7, type: 3}
+  m_Name: CleanUp
+  m_EditorClassIdentifier: Assembly-CSharp::SO_TaskInfo
+  taskName: Cleanup1
+  taskType: 0
+  numberOfCleanUps: 3

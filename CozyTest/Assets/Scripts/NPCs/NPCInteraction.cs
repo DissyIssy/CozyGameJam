@@ -1,13 +1,24 @@
 using System;
 using UnityEngine;
 using Yarn.Unity;
+using GameEvents.Manager;
 
 public class NPCInteraction : MonoBehaviour
 {
     [SerializeField] private SO_PassengerInfo passengerInfo;
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] Enum_NPCState NPCState;
-    
+
+
+    private void OnEnable()
+    {
+        GameEventManager.AddListener<TaskFinished_Event>(OnReportBack);
+    }
+
+    private void OnDisable()
+    {
+        GameEventManager.RemoveListener<TaskFinished_Event>(OnReportBack);
+    }
 
     public void InitDialogue()
     {
@@ -18,7 +29,9 @@ public class NPCInteraction : MonoBehaviour
                 NPCState = Enum_NPCState.Normal;
                 break;
             case Enum_NPCState.TaskGiving:
-                Debug.Log("Not implemented yet");
+                dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskGiving);
+                TaskManager.Instance.StartTask();
+                NPCState = Enum_NPCState.Normal;
                 break;
             case Enum_NPCState.Normal:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_Normal);
@@ -28,6 +41,10 @@ public class NPCInteraction : MonoBehaviour
                 break;
             case Enum_NPCState.gone:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_Gone);
+                break;
+            case Enum_NPCState.TaskReporting:
+                dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskReporting);
+                NPCState = Enum_NPCState.Normal;
                 break;
             default:
                 Debug.LogWarning("NPC has no state");
@@ -41,5 +58,10 @@ public class NPCInteraction : MonoBehaviour
         {
             dialogueRunner.Stop();
         }
+    }
+
+    public void OnReportBack(TaskFinished_Event e)
+    {
+        NPCState = Enum_NPCState.TaskReporting;
     }
 }
