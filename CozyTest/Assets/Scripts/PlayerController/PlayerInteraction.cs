@@ -1,4 +1,5 @@
 using System;
+using GameEvents.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yarn.Unity;
@@ -31,16 +32,24 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Transform targetTransform = null;
+        
         if (other.TryGetComponent(out NPCInteraction npc))
         {
             currentNPC = npc;
             //Send out event for UI
+            EnteredInteractableTrigger_Event e = new EnteredInteractableTrigger_Event();
+            e.interactableTransform = npc.transform;
+            GameEventManager.Raise(e);
         }
 
         if (other.TryGetComponent(out ItemInteraction item))
         {
             currentItem = item;
             //Send out event for UI
+            EnteredInteractableTrigger_Event e = new EnteredInteractableTrigger_Event();
+            e.interactableTransform = item.transform;
+            GameEventManager.Raise(e);
         }
     }
     
@@ -52,7 +61,10 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentNPC.StopDialouge();
                 currentNPC = null;
+                
                 //Send out event for UI
+                ExitedInteractableTrigger_Event e = new ExitedInteractableTrigger_Event();
+                GameEventManager.Raise(e);
             }
         }
 
@@ -62,6 +74,10 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentItem.StopDialouge();
                 currentItem = null;
+                
+                //Send out event for UI
+                ExitedInteractableTrigger_Event e = new ExitedInteractableTrigger_Event();
+                GameEventManager.Raise(e);
             }
         }
     }
