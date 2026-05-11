@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 55375593343347509}
   - component: {fileID: 5741822194571101584}
   - component: {fileID: 7737911243140425309}
-  - component: {fileID: 5281299751862417576}
+  - component: {fileID: 7565407956932987742}
   - component: {fileID: 702831764285286833}
   - component: {fileID: 3098061538045414785}
   - component: {fileID: 1283773994439557199}
@@ -121,7 +121,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5281299751862417576
+--- !u!114 &7565407956932987742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,15 +130,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5621221311166462616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 790764a05532bf844a10e150f675c640, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e5a3a445d448be48bfd89c918ed8185, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TankMovementController
-  speed: 5
-  turnSpeed: 180
-  gravity: -30
-  pushForce: 20
-  jumpHeight: 2
-  runMultiplier: 2
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  controller: {fileID: 7737911243140425309}
+  walkingSpeed: 2
+  runningSpeed: 4
+  gravity: -20
+  playerFacingDirectionOffset: 0
+  speedRotation: 3.5
+  stickCheckAngle: 50
+  _camera: {fileID: 0}
 --- !u!114 &702831764285286833
 MonoBehaviour:
   m_ObjectHideFlags: 0
