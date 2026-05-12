@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533867622905443528, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Name
-      value: VirtualCamera_6
+      value: VirtualCamera_Hallway
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.x
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.z
-      value: 11.034585
+      value: 12.608693
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Center.x
@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Center.z
-      value: 3.3645835
+      value: 2.5775294
       objectReference: {fileID: 0}
     - target: {fileID: 2823643460666751959, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalScale.x
@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1120479026}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.49
@@ -315,6 +319,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionPrompt
   interactionText: {fileID: 201584356}
+--- !u!114 &51186031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 702986931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &54542416
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +756,7 @@ GameObject:
   - component: {fileID: 255056228}
   - component: {fileID: 255056227}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToEngine
+  m_Name: TriggerZone_PlayerTeleport_Hallway3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -757,7 +772,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.19404, y: -49.708485, z: 10.777}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7778, y: 1.7778, z: 1.7778}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 592998329}
@@ -774,9 +789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 0
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 1701080206}
+  destination: {fileID: 748946718}
 --- !u!65 &255056228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1278,6 +1293,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1944755572}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.68
@@ -1385,37 +1404,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &485499600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 485499601}
-  m_Layer: 0
-  m_Name: PlayerDestination_Hallway
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &485499601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485499600}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -23.484436, y: 1.7715149, z: 3.24}
-  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8763826229748426881}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513632946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1492,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 5829214669467206208, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
   m_PrefabInstance: {fileID: 1193037148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &547049200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 580560096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &564396957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1655,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574239271}
   m_Mesh: {fileID: 0}
+--- !u!114 &576575379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 1852034269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+--- !u!114 &578083637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 1929757244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &580560096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1666,7 +1687,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533867622905443528, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Name
-      value: VirtualCamera_6
+      value: VirtualCamera_Bridge
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.x
@@ -1744,6 +1765,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 547049200}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.13
@@ -2083,37 +2108,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &688489322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 688489323}
-  m_Layer: 0
-  m_Name: PlayerDestination_UpperDeck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &688489323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688489322}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.41, y: 1.5621507, z: 7.72}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 623263671404043350}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &702986931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2190,6 +2184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 51186031}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
@@ -2372,7 +2370,7 @@ GameObject:
   - component: {fileID: 748946720}
   - component: {fileID: 748946719}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToHallway_FromEngine
+  m_Name: TriggerZone_PlayerTeleport_Engine
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2405,9 +2403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 0
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 485499601}
+  destination: {fileID: 255056226}
 --- !u!65 &748946720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2541,37 +2539,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870322883}
   m_Mesh: {fileID: 0}
---- !u!1 &871924875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 871924876}
-  m_Layer: 0
-  m_Name: PlayerDestination_Bridge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &871924876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871924875}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -10.95742, y: 1.7715187, z: 14.118}
-  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8159387362650207040}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875474827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,7 +2551,7 @@ GameObject:
   - component: {fileID: 875474830}
   - component: {fileID: 875474829}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToUpperDeck
+  m_Name: TriggerZone_PlayerTeleport_Hallway1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2599,8 +2566,8 @@ Transform:
   m_GameObject: {fileID: 875474827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.186436, y: -49.738487, z: -6.962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -23.186436, y: -49.738487, z: -6.87}
+  m_LocalScale: {x: 1.2298, y: 1.2298, z: 1.2298}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 592998329}
@@ -2617,9 +2584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 0
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 688489323}
+  destination: {fileID: 1960302435}
 --- !u!65 &875474830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2641,6 +2608,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1015138136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 1228593876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1022002306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,6 +3049,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087727590}
   m_Mesh: {fileID: 0}
+--- !u!114 &1120479026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 15102261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1123330477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,35 +3127,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5829214669467206208, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: field of view
-      value: 36.7
+      value: 46.7
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.942316
+      value: -12.41757
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -46.162678
+      value: -45.37268
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.449999
+      value: 11.459881
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9817713
+      value: -0.9321197
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18798003
+      value: -0.3436739
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.02496792
+      value: -0.113722384
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.012857458
+      value: 0.010404786
       objectReference: {fileID: 0}
     - target: {fileID: 8693308109412702035, guid: 9d9e209dd38f74b4b929a5354d308e12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3482,6 +3471,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1015138136}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.09
@@ -3680,6 +3673,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428691062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341727964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 1506436010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1353155932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3944,17 @@ Transform:
   - {fileID: 54542417}
   m_Father: {fileID: 523344760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1475415195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 1919421668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1490086561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3988,7 +4003,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533867622905443528, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Name
-      value: VirtualCamera_5
+      value: VirtualCamera_UpperDeck5
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.x
@@ -4054,6 +4069,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1341727964}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19
@@ -4288,7 +4307,7 @@ GameObject:
   - component: {fileID: 1605353679}
   - component: {fileID: 1605353678}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToHallway_FromBridge
+  m_Name: TriggerZone_PlayerTeleport_Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4321,9 +4340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 0
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 485499601}
+  destination: {fileID: 1700806972}
 --- !u!65 &1605353679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4554,7 +4573,7 @@ GameObject:
   - component: {fileID: 1700806974}
   - component: {fileID: 1700806973}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToBridge
+  m_Name: TriggerZone_PlayerTeleport_Hallway2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4570,7 +4589,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -21.31, y: -49.718487, z: 1.9276862}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3536, y: 1.3536, z: 1.3536}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 592998329}
@@ -4587,9 +4606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 0
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 871924876}
+  destination: {fileID: 1605353677}
 --- !u!65 &1700806974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4611,37 +4630,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1701080205
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1701080206}
-  m_Layer: 0
-  m_Name: PlayerDestination_Engine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1701080206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701080205}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 2.2666998, y: 1.7715187, z: 13.96}
-  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3980412039897792637}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708085107
 GameObject:
   m_ObjectHideFlags: 0
@@ -5043,7 +5031,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533867622905443528, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Name
-      value: VirtualCamera_6
+      value: VirtualCamera_Hallway2
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.x
@@ -5055,7 +5043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.z
-      value: 10.937897
+      value: 8.269086
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Center.x
@@ -5067,7 +5055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Center.z
-      value: -7.3632565
+      value: -8.697662
       objectReference: {fileID: 0}
     - target: {fileID: 2823643460666751959, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalScale.x
@@ -5121,6 +5109,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 576575379}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.49
@@ -5294,7 +5286,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533867622905443528, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Name
-      value: VirtualCamera_6
+      value: VirtualCamera_EngineRoom
       objectReference: {fileID: 0}
     - target: {fileID: 2597279313997186637, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_Size.x
@@ -5372,6 +5364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1475415195}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.95
@@ -5506,6 +5502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3924775586366682179, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 578083637}
     - target: {fileID: 5689609322212509945, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.68
@@ -5591,6 +5591,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944755572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169387032008135958, guid: df7da0d1ffbee124b809b7cbb29fc028, type: 3}
+  m_PrefabInstance: {fileID: 452201037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1952363781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5621221311166462616, guid: 8fd56d95842440b4fad3eed63d7c0fda, type: 3}
@@ -5691,7 +5702,7 @@ GameObject:
   - component: {fileID: 1960302434}
   - component: {fileID: 1960302433}
   m_Layer: 0
-  m_Name: TriggerZone_PlayerTeleport_ToHallway
+  m_Name: TriggerZone_PlayerTeleport_UpperDeck
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5709,9 +5720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4f36bb8022624c9398657cb9b5d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTeleporter
-  debugMode: 1
+  debugModeTeleport: 0
   characterController: {fileID: 401885400}
-  destination: {fileID: 485499601}
+  destination: {fileID: 875474828}
 --- !u!65 &1960302434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6095,10 +6106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 977185442881606621, guid: f658a2aa6cca07447b168e5f639476b2, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 688489323}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f658a2aa6cca07447b168e5f639476b2, type: 3}
 --- !u!4 &623263671404043350 stripped
@@ -6164,10 +6172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6530501849335102735, guid: 28cce65fc84d1dd4695e16f4ec4b59a6, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1701080206}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28cce65fc84d1dd4695e16f4ec4b59a6, type: 3}
 --- !u!4 &3980412039897792637 stripped
@@ -6238,10 +6243,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1529805606798752773, guid: 425123830ad165648ada198014741991, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8395904891370586055, guid: 425123830ad165648ada198014741991, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 871924876}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425123830ad165648ada198014741991, type: 3}
 --- !u!4 &8159387362650207040 stripped
@@ -6316,10 +6318,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5454649036920560170, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2902074753730959432, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 485499601}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc0f7f2aca361534ba71673642e8bc90, type: 3}
 --- !u!4 &8763826229748426881 stripped
