@@ -27,6 +27,7 @@ public class TaskManager : MonoBehaviour
 
     public void StartTask()
     {
+        //Triggered by talking to character (they call this function)
         Debug.Log("You started the task!");
         taskStarted = true;
         numberOfCleanUps_Total = taskInfo.numberOfCleanUps;

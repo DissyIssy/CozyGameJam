@@ -883,26 +883,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1830392317}
     m_Modifications:
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -23.423058
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -23.423058
-      objectReference: {fileID: 0}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1675692
@@ -947,10 +935,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6096265242667580528, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 1074575393}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4217,26 +4201,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1830392317}
     m_Modifications:
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -23.423058
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -23.423058
-      objectReference: {fileID: 0}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.3524303
@@ -4281,10 +4253,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6096265242667580528, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 1074575393}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4797,26 +4765,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1830392317}
     m_Modifications:
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125229502118043692, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_Size.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -23.423058
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -23.423058
-      objectReference: {fileID: 0}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 3565508833794141786, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     - target: {fileID: 4914885602343169365, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.49757
@@ -4861,10 +4817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP
       objectReference: {fileID: 0}
-    - target: {fileID: 6096265242667580528, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 1074575393}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

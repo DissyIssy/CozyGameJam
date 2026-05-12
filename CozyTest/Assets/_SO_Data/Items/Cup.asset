@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 956792b1f0570204690a79825f3b1e87, type: 3}
-  m_Name: Drink
+  m_Name: Cup
   m_EditorClassIdentifier: Assembly-CSharp::SO_InteractableInfo
-  interactableName: Drink
+  displayName: Cup
   yarnID_Interactable: Drink
-  yarnID_PickUpDialogue: Drink_PickUp
   isPickUpAble: 1
