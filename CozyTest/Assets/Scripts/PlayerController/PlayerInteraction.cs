@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design.Serialization;
 using GameEvents.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,7 +45,22 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentTarget == null) return;
         
+        //Press Q - currently picks up item
+        if (PlayerHeldObject.Instance.holdsItem)
+        {
+            PlayerHeldObject.Instance.PutDownObject();
+        }
+        else
+        {
+            currentTarget.OnInteract();
+        }
+    }
+
+    public void OnInspect()
+    {
+        if (currentTarget == null) return;
+        
+        //Press E - currently gets dialogue infos
         currentTarget.InitDialogue();
-        currentTarget.OnInteract();
     }
 }

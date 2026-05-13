@@ -935,6 +935,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4253,6 +4261,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4817,6 +4833,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPECIAL_CUP
       objectReference: {fileID: 0}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1074575393}
+    - target: {fileID: 5772976126480475006, guid: d968d898c42dbc8428929b3e3ca32779, type: 3}
+      propertyPath: interactableInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

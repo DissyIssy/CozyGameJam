@@ -4,7 +4,9 @@ public class PlayerHeldObject : MonoBehaviour
 {
     public static PlayerHeldObject Instance;
     [SerializeField] private Transform handSocket;
-    private bool holdsItem;
+    [HideInInspector]
+    public bool holdsItem;
+    private GameObject currentObject;
 
     private void Awake()
     {
@@ -14,16 +16,20 @@ public class PlayerHeldObject : MonoBehaviour
     public static void PickUpObject(GameObject itemObject)
     {
         if (Instance.holdsItem)
-        {
-            return;
+        { 
+            //Puts item down if already holding one
+            Instance.PutDownObject();
         }
         
-        //Deactivates physics
+        Instance.currentObject = itemObject;
+        
+        //Disables physics
         if (itemObject.TryGetComponent(out Rigidbody rb))
         {
             rb.isKinematic = true;
         }
 
+        //Disables colliders
         foreach (var col in itemObject.GetComponentsInChildren<Collider>())
         {
             col.enabled = false;
@@ -36,5 +42,33 @@ public class PlayerHeldObject : MonoBehaviour
         itemObject.transform.localRotation = Quaternion.identity;
 
         Instance.holdsItem = true;
+    }
+
+    public void PutDownObject()
+    {
+        if (!Instance.holdsItem || Instance.currentObject == null)
+        {
+            return;
+        }
+        
+        if (Instance.holdsItem)
+        {
+            Instance.currentObject.transform.SetParent(null);
+            
+            //Enable colliders
+            foreach (var col in Instance.currentObject.GetComponentsInChildren<Collider>())
+            {
+                col.enabled = true;
+            }
+            
+            //Enable physics
+            if (Instance.currentObject.TryGetComponent(out Rigidbody rb))
+            {
+                rb.isKinematic = false;
+            }
+            
+            Instance.currentObject = null;
+            Instance.holdsItem = false;
+        }
     }
 }
