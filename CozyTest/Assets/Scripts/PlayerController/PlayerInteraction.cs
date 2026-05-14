@@ -46,17 +46,15 @@ public class PlayerInteraction : MonoBehaviour
 
     public void OnInteract()
     {
-        if (currentTarget == null) return;
-        
         //Press Q - currently picks up item
         if (PlayerHeldObject.Instance.holdsItem)
         {
             PlayerHeldObject.Instance.PutDownObject();
-        }
-        else
-        {
-            currentTarget.OnInteract();
-        }
+            return;
+        } 
+        
+        if (currentTarget == null) return;
+        currentTarget.OnInteract();
     }
 
     public void OnInspect()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameEvents.Manager;
 using UnityEngine;
 
 public class TrashCan : MonoBehaviour
@@ -11,12 +12,14 @@ public class TrashCan : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Works with layers, TrashCanLayer and TrashLayer (physics matrix)
-        StartCoroutine(SuckIntoVoid(other.gameObject));
+        if (TaskManager.Instance.taskStarted)
+        {
+            StartCoroutine(SuckIntoVoid(other.gameObject));
+        }
     }
 
     IEnumerator SuckIntoVoid(GameObject trash)
     {
-        Debug.Log("Suck IN COROUTINE");
         // Disable physics so it doesn't fight the animation
         if (trash.TryGetComponent<Rigidbody>(out var rb)) rb.isKinematic = true;
         if (trash.TryGetComponent<Collider>(out var col)) col.enabled = false;
@@ -41,6 +44,9 @@ public class TrashCan : MonoBehaviour
         }
 
         Destroy(trash);
-        //SEND AN EVENT TO THE TASKMANAGER
+        
+        // Call Event
+        OneTrashCollected_Event e = new OneTrashCollected_Event();
+        GameEventManager.Raise(e);
     }
 }

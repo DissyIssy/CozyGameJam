@@ -1,9 +1,11 @@
+using System;
 using GameEvents.Manager;
 using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
     //How to build this out to be multiple tasks?
+    //Clean this up a bit
     public static TaskManager Instance { get; private set; }
     public SO_TaskInfo taskInfo;
 
@@ -25,6 +27,16 @@ public class TaskManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnEnable()
+    {
+        GameEventManager.AddListener<OneTrashCollected_Event>(OnOneTrashCollected);
+    }
+
+    private void OnDisable()
+    {
+        GameEventManager.RemoveListener<OneTrashCollected_Event>(OnOneTrashCollected);
+    }
+
     public void StartTask()
     {
         //Triggered by talking to character (they call this function)
@@ -36,7 +48,6 @@ public class TaskManager : MonoBehaviour
     
     public void RegisterClean()
     {
-        //Checks if is ended?
         numberOfCleanUps_Current++;
         Debug.Log($"You have cleaned {numberOfCleanUps_Current} items, out ot {numberOfCleanUps_Total}");
 
@@ -54,5 +65,10 @@ public class TaskManager : MonoBehaviour
         //Fires task finished event
         TaskFinished_Event e = new TaskFinished_Event();
         GameEventManager.Raise(e);
+    }
+
+    void OnOneTrashCollected(OneTrashCollected_Event e)
+    {
+        RegisterClean();
     }
 }

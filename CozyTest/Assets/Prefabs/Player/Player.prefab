@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1770985777789821339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.071, z: 0}
+  m_LocalPosition: {x: 0, y: 1.071, z: 0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHeldObject
   handSocket: {fileID: 2977198296956605386}
+  holdsItem: 0
 --- !u!1 &5621221311166462616
 GameObject:
   m_ObjectHideFlags: 0
