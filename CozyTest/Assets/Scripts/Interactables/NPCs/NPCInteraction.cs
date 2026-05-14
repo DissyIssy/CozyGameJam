@@ -3,10 +3,9 @@ using UnityEngine;
 using Yarn.Unity;
 using GameEvents.Manager;
 
-public class NPCInteraction : MonoBehaviour
+public class NPCInteraction : InteractableBase
 {
     [SerializeField] private SO_PassengerInfo passengerInfo;
-    [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] Enum_NPCState NPCState;
 
 
@@ -20,7 +19,7 @@ public class NPCInteraction : MonoBehaviour
         GameEventManager.RemoveListener<TaskFinished_Event>(OnReportBack);
     }
 
-    public void InitDialogue()
+    public override void InitDialogue()
     {
         switch (NPCState)
         {
@@ -49,14 +48,6 @@ public class NPCInteraction : MonoBehaviour
             default:
                 Debug.LogWarning("NPC has no state");
                 break;
-        }
-    }
-
-    public void StopDialouge()
-    {
-        if (dialogueRunner.IsDialogueRunning)
-        {
-            dialogueRunner.Stop();
         }
     }
 

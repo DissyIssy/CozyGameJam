@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6967296418195330916}
   - component: {fileID: 4125229502118043692}
-  - component: {fileID: 6096265242667580528}
+  - component: {fileID: 5772976126480475006}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05, y: 0.05, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6096265242667580528
+--- !u!114 &5772976126480475006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,11 +63,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691013802283310095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e096a23c96c944cbd190f84d4d9489, type: 3}
+  m_Script: {fileID: 11500000, guid: 44acf24fc0f2875478bb28dae625ba43, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemInteraction
-  interactableInfo: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::LightItem
   dialogueRunner: {fileID: 0}
+  interactableInfo: {fileID: 0}
 --- !u!1001 &1308604010424892995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       propertyPath: m_Name
-      value: SPECIAL_CUP
+      value: Interactable_Cup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -138,10 +138,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6204893761552405270, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6967296418195330916}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1466832770877466116}
   m_SourcePrefab: {fileID: 100100000, guid: bb94493d407ccda438ced7187129df9f, type: 3}
 --- !u!4 &4914885602343169365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6204893761552405270, guid: bb94493d407ccda438ced7187129df9f, type: 3}
   m_PrefabInstance: {fileID: 1308604010424892995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5728295906141861871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
+  m_PrefabInstance: {fileID: 1308604010424892995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466832770877466116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728295906141861871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44acf24fc0f2875478bb28dae625ba43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightItem
+  dialogueRunner: {fileID: 0}
+  interactableInfo: {fileID: 0}
