@@ -6,6 +6,7 @@ public class TaskManager : MonoBehaviour
 {
     //How to build this out to be multiple tasks?
     //Clean this up a bit
+    [SerializeField] private bool debugMode;
     public static TaskManager Instance { get; private set; }
     public SO_TaskInfo taskInfo;
 
@@ -39,17 +40,24 @@ public class TaskManager : MonoBehaviour
 
     public void StartTask()
     {
-        //Triggered by talking to character (they call this function)
-        Debug.Log("You started the task!");
+        //Called by NpcInteraction
+        DebugMode.Log(this,"You started the task!",debugMode);
+        
+        //Debug.Log("You started the task!");
         taskStarted = true;
         numberOfCleanUps_Total = taskInfo.numberOfCleanUps;
         numberOfCleanUps_Current = 0;
+        
+        //Fires task started event
+        TaskStarted_Event e = new TaskStarted_Event();
+        e.totalTrash = numberOfCleanUps_Total;
+        GameEventManager.Raise(e);
     }
     
     public void RegisterClean()
     {
         numberOfCleanUps_Current++;
-        Debug.Log($"You have cleaned {numberOfCleanUps_Current} items, out ot {numberOfCleanUps_Total}");
+        DebugMode.Log(this, $"You have cleaned {numberOfCleanUps_Current} items, out ot {numberOfCleanUps_Total}", debugMode);
 
         if (numberOfCleanUps_Current == numberOfCleanUps_Total)
         {
@@ -59,7 +67,7 @@ public class TaskManager : MonoBehaviour
 
     public void EndTask()
     {
-        Debug.Log("You finished the task!");
+        DebugMode.Log(this, "You finished the task!", debugMode);
         taskStarted = false;
         
         //Fires task finished event
