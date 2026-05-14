@@ -24,6 +24,7 @@ public class PlayerInteraction : MonoBehaviour
             //Send out event for UI
             EnteredInteractableTrigger_Event e = new EnteredInteractableTrigger_Event();
             e.interactableTransform = interactable.transform;
+            e.isPickUpAble = currentTarget.IsPickUpAble;
             GameEventManager.Raise(e);
         }
     }

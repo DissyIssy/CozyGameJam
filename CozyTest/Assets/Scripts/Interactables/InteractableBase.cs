@@ -4,7 +4,8 @@ using Yarn.Unity;
 public abstract class InteractableBase : MonoBehaviour
 {
     [SerializeField] protected DialogueRunner dialogueRunner;
-
+    public virtual bool IsPickUpAble => false;
+    
     //Needs to be on the same gameobject as the trigger
     public abstract void InitDialogue();
 

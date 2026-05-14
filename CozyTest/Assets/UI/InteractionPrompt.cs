@@ -1,10 +1,13 @@
 using System;
 using GameEvents.Manager;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InteractionPrompt : MonoBehaviour
 {
-    public GameObject interactionText;
+    [SerializeField] private GameObject InspectText;
+    [SerializeField] private GameObject PickUpText;
+    [SerializeField] private float gapBetweenPrompts = 0.5f;
     private Transform targetToFollow;
     private Vector3 currentOffset;
 
@@ -23,28 +26,49 @@ public class InteractionPrompt : MonoBehaviour
 
     public void Update()
     {
-        if (interactionText.activeSelf && targetToFollow != null)
+        if (targetToFollow == null) return;
+        
+        if (InspectText != null && InspectText.activeSelf)
         {
-            interactionText.transform.position = targetToFollow.position + currentOffset;
+            InspectText.transform.position = targetToFollow.position + currentOffset;
+        }
+
+        if (PickUpText != null && PickUpText.activeSelf)
+        {
+            Vector3 verticalGap = new Vector3(0, gapBetweenPrompts, 0);
+            PickUpText.transform.position = targetToFollow.position + currentOffset + verticalGap;
         }
     }
 
     void OnEnteredInteractableTriggerEvent(EnteredInteractableTrigger_Event e)
     {
-        if (interactionText != null)
+        if (InspectText != null)
         {
             targetToFollow = e.interactableTransform;
             currentOffset = e.offset;
-            interactionText.SetActive(true);
+            InspectText.SetActive(true);
+        }
+
+        if (PickUpText != null && e.isPickUpAble)
+        {
+            targetToFollow = e.interactableTransform;
+            currentOffset = e.offset;
+            PickUpText.SetActive(true);
         }
     }
 
     void OnExitedInteractableTriggerEvent(ExitedInteractableTrigger_Event e)
     {
-        if (interactionText != null)
+        if (InspectText != null)
         {
-            interactionText.SetActive(false);
-            targetToFollow = null;
+            InspectText.SetActive(false);
         }
+        
+        if (PickUpText != null)
+        {
+            PickUpText.SetActive(false);
+        }
+        
+        targetToFollow = null;
     }
 }
