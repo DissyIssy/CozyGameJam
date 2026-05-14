@@ -15,3 +15,4 @@ MonoBehaviour:
   displayName: Cup
   yarnID_Interactable: Drink
   isPickUpAble: 1
+  isTrashAble: 1

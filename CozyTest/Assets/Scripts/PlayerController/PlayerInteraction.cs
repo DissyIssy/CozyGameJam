@@ -32,12 +32,15 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.TryGetComponent(out InteractableBase interactable))
         {
-            currentTarget.StopDialogue();
-            currentTarget = null;
+            if (currentTarget != null && currentTarget == interactable)
+            {
+                currentTarget.StopDialogue();
+                currentTarget = null;
             
-            //Send out event for UI
-            ExitedInteractableTrigger_Event e = new ExitedInteractableTrigger_Event();
-            GameEventManager.Raise(e);
+                // Send out event for UI
+                ExitedInteractableTrigger_Event e = new ExitedInteractableTrigger_Event();
+                GameEventManager.Raise(e);
+            }
         }
     }
 
