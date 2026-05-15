@@ -74,4 +74,9 @@ public class PlayerHeldObject : MonoBehaviour
             Instance.holdsItem = false;
         }
     }
+
+    public void DeleteObject()
+    {
+        Destroy(currentObject);
+    }
 }

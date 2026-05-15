@@ -14,6 +14,13 @@ public class CompareItem : MonoBehaviour
         }
         
         string heldItemName = PlayerHeldObject.Instance.lightItemScript.interactableInfo.displayName;
-        return string.Equals(heldItemName, itemName, System.StringComparison.OrdinalIgnoreCase);
+
+        if (string.Equals(heldItemName,itemName,System.StringComparison.OrdinalIgnoreCase))
+        {
+            PlayerHeldObject.Instance.DeleteObject();
+            return true;
+        }
+
+        return false;
     }
 }
