@@ -30,7 +30,6 @@ public class NPCInteraction : InteractableBase
             case Enum_NPCState.TaskGiving:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskGiving);
                 TaskManager.Instance.StartTask();
-                NPCState = Enum_NPCState.Normal;
                 break;
             case Enum_NPCState.Normal:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_Normal);

@@ -5,6 +5,18 @@ Snooty: I haven't even received a complimentary drink yet.
 Snooty: Dreadful service. Hmpf!
 ===
 
+title: Snooty_TaskGiving
+---
+Snooty: My hat was blown off...
+Snooty: Could you retrieve it for me?
+<<if has_item("Hat")>>
+	Snooty: You've found my hat! I still strongly dislike you.
+<<else>>
+    Merchant: Come back when you actually have my hat.
+<<endif>>
+===
+
+
 title: Snooty_Normal
 ---
 <<set $nextText to random_range(1,3)>>

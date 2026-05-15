@@ -3,6 +3,7 @@ using Yarn.Unity;
 
 public abstract class InteractableBase : MonoBehaviour
 {
+    //Make it so the dialogue runner is found automatically
     [SerializeField] protected DialogueRunner dialogueRunner;
     public virtual bool IsPickUpAble => false;
     
