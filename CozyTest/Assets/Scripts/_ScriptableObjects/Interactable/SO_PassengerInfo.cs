@@ -8,4 +8,5 @@ public class SO_PassengerInfo : ScriptableObject
     public string yarnID_TaskGiving;
     public string yarnID_TaskDuring;
     public string yarnID_TaskReporting;
+    public SO_TaskInfo task;
 }

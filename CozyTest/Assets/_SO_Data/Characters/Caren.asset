@@ -17,3 +17,4 @@ MonoBehaviour:
   yarnID_TaskGiving: Caren_TaskGiving
   yarnID_TaskDuring: Caren_TaskDuring
   yarnID_TaskReporting: Caren_TaskReporting
+  task: {fileID: 11400000, guid: 8a92053d1e8bd4442af56c0233b0e71d, type: 2}

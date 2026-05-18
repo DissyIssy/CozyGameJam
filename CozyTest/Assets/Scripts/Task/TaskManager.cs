@@ -1,6 +1,8 @@
 using System;
+using System.Threading.Tasks;
 using GameEvents.Manager;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TaskManager : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class TaskManager : MonoBehaviour
     //Clean this up a bit
     [SerializeField] private bool debugMode;
     public static TaskManager Instance { get; private set; }
-    public SO_TaskInfo taskInfo;
+    public SO_TaskInfo currentTask;
 
     [Header("CleanUp Attributes")]
     public int numberOfCleanUps_Total;
@@ -17,6 +19,7 @@ public class TaskManager : MonoBehaviour
     public bool taskStarted;
     
     
+    //God object for all of the task, should be divided among tasks in later prototype
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -38,14 +41,36 @@ public class TaskManager : MonoBehaviour
         GameEventManager.RemoveListener<OneTrashCollected_Event>(OnOneTrashCollected);
     }
 
-    public void StartTask()
+    public void StartTask(SO_PassengerInfo passenger)
+    {
+        if (passenger.task == null) return;
+        if (taskStarted) 
+        {
+            DebugMode.Log(this, "Can't start a new task; a task is already active!", debugMode);
+            return;
+        }
+
+        currentTask = passenger.task;
+        switch (currentTask.taskType)
+        {
+            case Enum_TaskTypes.CleanUp:
+                StartCleanUpTask();
+                break;
+            case Enum_TaskTypes.FetchItem:
+                StartFetchItemTask();
+                break;
+        }
+        
+    }
+
+    public void StartCleanUpTask()
     {
         //Called by NpcInteraction
-        DebugMode.Log(this,"You started the task!",debugMode);
+        DebugMode.Log(this,"You started the CleanUp Task!",debugMode);
         
         //Debug.Log("You started the task!");
         taskStarted = true;
-        numberOfCleanUps_Total = taskInfo.numberOfCleanUps;
+        numberOfCleanUps_Total = currentTask.numberOfCleanUps;
         numberOfCleanUps_Current = 0;
         
         //Fires task started event
@@ -65,10 +90,20 @@ public class TaskManager : MonoBehaviour
         }
     }
 
+    public void StartFetchItemTask()
+    {
+        taskStarted = true;
+        DebugMode.Log(this, "You started the FetchItemTask",debugMode);
+    }
+
     public void EndTask()
     {
         DebugMode.Log(this, "You finished the task!", debugMode);
         taskStarted = false;
+        
+        //CleanUpTask
+        numberOfCleanUps_Total = 0;
+        numberOfCleanUps_Current = 0;
         
         //Fires task finished event
         TaskFinished_Event e = new TaskFinished_Event();

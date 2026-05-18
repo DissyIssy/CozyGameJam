@@ -8,4 +8,7 @@ public class SO_TaskInfo : ScriptableObject
     
     [Header("CleanUp Settings")]
     public int numberOfCleanUps;
+
+    [Header("FetchItem Settings")
+    ]public string itemIDToFetch;
 }
