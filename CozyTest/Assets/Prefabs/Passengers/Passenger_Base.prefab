@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5363226535842303002}
   - component: {fileID: 6120285707350880926}
   - component: {fileID: 3226878213359145404}
-  - component: {fileID: 4649112538253862388}
   - component: {fileID: 8790434994476167004}
   m_Layer: 0
   m_Name: Passenger_Base
@@ -117,27 +116,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &4649112538253862388
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497379658310488472}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8790434994476167004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231,6 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc34d9488e486b64b8c0289df2866c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
-  passengerInfo: {fileID: 0}
   dialogueRunner: {fileID: 0}
+  passengerInfo: {fileID: 0}
   NPCState: 0

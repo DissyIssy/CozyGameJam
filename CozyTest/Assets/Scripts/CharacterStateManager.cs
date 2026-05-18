@@ -7,7 +7,9 @@ public class CharacterStateManager : MonoBehaviour
 {
     public static CharacterStateManager Instance;
     public GameObject caren;
+    public GameObject skipper;
     private NPCInteraction carenScript;
+    private NPCInteraction skipperScript;
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class CharacterStateManager : MonoBehaviour
         if (caren != null)
         {
             carenScript = caren.GetComponentInChildren<NPCInteraction>();
+            skipperScript = skipper.GetComponentInChildren<NPCInteraction>();
         }
     }
 
@@ -38,8 +41,11 @@ public class CharacterStateManager : MonoBehaviour
             case "Caren":
                 carenScript.NPCState = parsedState;
                 break;
+            case "Skipper":
+                skipperScript.NPCState = parsedState;
+                break;
             default:
-                Debug.Log("No character like that exists");
+                Debug.Log("No character like that exists, maybe needs to be added here.");
                 break;
         }
     }

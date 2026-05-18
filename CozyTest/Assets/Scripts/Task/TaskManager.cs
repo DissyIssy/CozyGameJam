@@ -108,6 +108,9 @@ public class TaskManager : MonoBehaviour
         //Fires task finished event
         TaskFinished_Event e = new TaskFinished_Event();
         GameEventManager.Raise(e);
+        
+        //hardcoded placeholder for until either all state changes are in yarn or through code
+        CharacterStateManager.Instance.CharacterChangeState("Skipper", "TaskReporting");
     }
 
     void OnOneTrashCollected(OneTrashCollected_Event e)

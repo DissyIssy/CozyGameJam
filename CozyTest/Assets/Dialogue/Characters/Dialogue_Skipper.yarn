@@ -1,30 +1,54 @@
 ﻿title: Skipper_New
 ---
-Captain Skipper: There you are! I’ve, uh… I’ve just been chatting to this lovely lady over here!
-Captain Skipper: Mingling with the guests, you know.
 ===
 
 title: Skipper_TaskGiving
 ---
-Captain Skipper: Why don’t you [tidy up a bit], hm?
+Captain Skipper: ...and then I pulled her luggage out of the water with that guy's fishing rod! Hahaha! What a day!
+Captain Skipper: That was around the time you started working on board too, right? Geez, time sure flies on a cruise...
+Captain Skipper: Ahem! Getting back on track then, we should probably tidy up the place before we dock tomorrow.
+Captain Skipper: And I mean you. You should clean up.
+Captain Skipper: I've still got important business to do!
+Captain Skipper: Like standing here!
+<<CharacterChangeState CharacterStateManager Skipper TaskDuring>>
 ===
 
 title: Skipper_Normal
 ---
-<<set $nextText to random_range(1,2)>>
+<<set $nextText to random_range(1,3)>>
 
 <<if $nextText == 1>>
-	Captain Skipper: Ahem! You see, this beauty of a ship has been with me for many years.
-	Captain Skipper: Sometimes I feel like it knows me better than my wife, haha!
+	Captain Skipper: You know, I've piloted this here ship for many, many years. I'll miss her when I eventually retire.
+	Captain Skipper: That'll be in the far future, I hope!
 <<elseif $nextText == 2>>
-	Captain Skipper: Where was I…? Ah, yes! That horrible storm
-	Captain Skipper: He trails off into a story you have heard far too many times.
+	Captain Skipper: ...Maybe I should also tidy up my desk...? Nah, too much work.
+	Captain Skipper: Oh. You heard that?
+<<elseif $nextText == 3>>
+	Captain Skipper: What will we do with a drunken sailor? ♪ What will we do with a drunken sailor? ♪
 <<else>>
 	Captain Skipper: Harrharr!
 <<endif>>
 ===
+
+title: Skipper_TaskDuring
+---
+<<set $nextText to random_range(1,3)>>
+
+<<if $nextText == 1>>
+	Captain Skipper: I still see a little something over there, chap!
+<<elseif $nextText == 2>>
+	Captain Skipper: Want to chat? Maybe after you're done.
+<<elseif $nextText == 3>>
+	Captain Skipper: Duty calls!
+<<else>>
+	Captain Skipper: Duty calls!
+<<endif>>
+===
+
 title: Skipper_TaskReporting
 ---
-Captain Skipper: Nice, all the trash is gone!
-Captain Skipper: Please go downstairs, there's even more for you to do.
+Captain Skipper: That's what I call squeaky clean! ...If you ignore the mess on my desk.
+Captain Skipper: Anywho! Thanks for the help, chap! You're free to mingle with the guests outside now if you'd like.
+Captain Skipper: I'm going to handle the rest of the arrival, don't you worry.
+<<CharacterChangeState CharacterStateManager Skipper Normal>>
 ===
