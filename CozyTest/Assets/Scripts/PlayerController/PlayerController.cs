@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
+    [SerializeField] private Animator animator;
     
     [SerializeField] private float walkingSpeed = 2f; //walkingSpeed variable use in calculating player velocity
     [SerializeField] private float runningSpeed = 4f; //runningSpeed variable use in calculating player velocity
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
         {
             TestPLayerMovement();
         }
+        
+        HandleAnimation();
     }
 
     private void OnMove(InputValue value)
@@ -143,5 +146,17 @@ public class PlayerController : MonoBehaviour
         
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
         rb.AddForce(pushDir * currentPushForce, ForceMode.Impulse);
+    }
+    
+    private void HandleAnimation()
+    {
+        if (stickInputValue.magnitude > 0.1f)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 }
