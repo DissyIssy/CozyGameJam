@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using Unity.Cinemachine;
 
 public class PlayerTeleporter : MonoBehaviour
 {
     [SerializeField] private bool debugModeTeleport;
-    //External reference - should not happen, use eventbus toot toot
-    [SerializeField] private CharacterController characterController;
-    
     [SerializeField] private Transform destination;
+    [SerializeField] private float exitYawOffset;
 
     private bool isArrival = false;
     
@@ -39,23 +36,80 @@ public class PlayerTeleporter : MonoBehaviour
 
     private IEnumerator TeleportPlayer(GameObject player)
     {
-        CharacterController characterController = player.GetComponent<CharacterController>();
+        CharacterController playerController = player.GetComponent<CharacterController>();
 
-        if (characterController != null)
+        if (playerController != null)
         {
-            characterController.enabled = false;
+            playerController.enabled = false;
         }
 
+        Quaternion destinationRotation = destination.rotation * Quaternion.Euler(0f, exitYawOffset, 0f);
+
         player.transform.position = destination.position;
-        player.transform.rotation = destination.rotation;
+        player.transform.rotation = destinationRotation;
+        AlignVisualModelRotation(player.transform, destinationRotation);
         
         DebugPrint("Teleporting player to:" + destination.position);
 
         yield return new WaitForFixedUpdate();
 
-        if (characterController != null)
+        if (playerController != null)
         {
-            this.characterController.enabled = true;
+            playerController.enabled = true;
+        }
+
+        ActivateDestinationCamera(player.transform.position);
+    }
+
+    private void AlignVisualModelRotation(Transform playerTransform, Quaternion targetRotation)
+    {
+        Transform mcTransform = playerTransform.Find("MC");
+        if (mcTransform != null)
+        {
+            mcTransform.rotation = targetRotation;
+        }
+    }
+
+    private void ActivateDestinationCamera(Vector3 playerPosition)
+    {
+        CameraSwitcher[] switchers = FindObjectsOfType<CameraSwitcher>(true);
+        if (switchers == null || switchers.Length == 0)
+        {
+            return;
+        }
+
+        CameraSwitcher insideSwitcher = null;
+        CameraSwitcher closestSwitcher = null;
+        float closestDistanceSqr = float.MaxValue;
+
+        for (int i = 0; i < switchers.Length; i++)
+        {
+            CameraSwitcher switcher = switchers[i];
+            if (switcher == null)
+            {
+                continue;
+            }
+
+            Collider zoneCollider = switcher.GetComponent<Collider>();
+            if (zoneCollider != null && zoneCollider.bounds.Contains(playerPosition))
+            {
+                insideSwitcher = switcher;
+                break;
+            }
+
+            float distanceSqr = (switcher.transform.position - playerPosition).sqrMagnitude;
+            if (distanceSqr < closestDistanceSqr)
+            {
+                closestDistanceSqr = distanceSqr;
+                closestSwitcher = switcher;
+            }
+        }
+
+        CameraSwitcher target = insideSwitcher != null ? insideSwitcher : closestSwitcher;
+        if (target != null)
+        {
+            target.SetActive();
+            DebugPrint("Activated camera zone: " + target.name);
         }
     }
     
