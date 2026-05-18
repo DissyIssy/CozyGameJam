@@ -25,6 +25,16 @@ public class PlayerHeldObject : MonoBehaviour
         Instance.currentObject = itemObject;
         Instance.lightItemScript = itemObject.GetComponentInChildren<LightItem>();
             
+        //Quick and dirty fix for the greenlight
+        if (itemObject.name.ToLower().Contains("hat"))
+        {
+            SoundManager.Instance.PlaySFX("glitchSound"); 
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX("pickUpSound");
+        }
+        
         //Disables physics
         if (itemObject.TryGetComponent(out Rigidbody rb))
         {
