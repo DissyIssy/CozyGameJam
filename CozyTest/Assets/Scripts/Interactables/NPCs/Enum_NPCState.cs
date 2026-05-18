@@ -5,7 +5,6 @@ public enum Enum_NPCState
     New,
     TaskGiving,
     Normal,
-    off,
-    gone,
+    TaskDuring,
     TaskReporting
 }

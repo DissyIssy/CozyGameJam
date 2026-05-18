@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerHeldObject : MonoBehaviour
 {
     public static PlayerHeldObject Instance;
     [SerializeField] private Transform handSocket;
-    [HideInInspector]
-    public bool holdsItem;
+    [HideInInspector] public bool holdsItem;
+    [HideInInspector] public LightItem lightItemScript;
     private GameObject currentObject;
 
     private void Awake()
@@ -22,7 +23,8 @@ public class PlayerHeldObject : MonoBehaviour
         }
         
         Instance.currentObject = itemObject;
-        
+        Instance.lightItemScript = itemObject.GetComponentInChildren<LightItem>();
+            
         //Disables physics
         if (itemObject.TryGetComponent(out Rigidbody rb))
         {
@@ -68,7 +70,16 @@ public class PlayerHeldObject : MonoBehaviour
             }
             
             Instance.currentObject = null;
+            Instance.lightItemScript = null;
             Instance.holdsItem = false;
         }
+    }
+
+    public void DeleteObject()
+    {
+        Destroy(currentObject);
+        currentObject = null;
+        lightItemScript = null;
+        holdsItem = false;
     }
 }

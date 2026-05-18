@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6967296418195330916}
   - component: {fileID: 5772976126480475006}
   - component: {fileID: 5422598192836341140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightItem
   dialogueRunner: {fileID: 0}
-  interactableInfo: {fileID: 0}
+  interactableInfo: {fileID: 11400000, guid: 094027c0880289a448c514ba58cee98e, type: 2}
 --- !u!135 &5422598192836341140
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -76,6 +76,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2972653912377816301, guid: bb94493d407ccda438ced7187129df9f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4864528280440201773, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -136,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash_Cup
       objectReference: {fileID: 0}
+    - target: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4864528280440201773, guid: bb94493d407ccda438ced7187129df9f, type: 3}
     m_RemovedGameObjects: []
@@ -144,9 +152,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6967296418195330916}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1466832770877466116}
     - targetCorrespondingSourceObject: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5185564528478503600}
@@ -161,20 +166,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6726098198482258348, guid: bb94493d407ccda438ced7187129df9f, type: 3}
   m_PrefabInstance: {fileID: 1308604010424892995}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1466832770877466116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5728295906141861871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44acf24fc0f2875478bb28dae625ba43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightItem
-  dialogueRunner: {fileID: 0}
-  interactableInfo: {fileID: 0}
 --- !u!65 &5185564528478503600
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9ae971fcc28054d8fe18a0a3e98160, type: 3}
   m_Name: Skipper
   m_EditorClassIdentifier: Assembly-CSharp::SO_PassengerInfo
-  passengerName: Skipper
   yarnID_New: Skipper_New
-  yarnID_TaskGiving: Skipper_TaskGiving
   yarnID_Normal: Skipper_Normal
-  yarnID_Off: Skipper_Off
-  yarnID_Gone: Skipper_Gone
+  yarnID_TaskGiving: Skipper_TaskGiving
+  yarnID_TaskDuring: Skipper_TaskDuring
   yarnID_TaskReporting: Skipper_TaskReporting
+  task: {fileID: 11400000, guid: cd816bac92273b549a72bca7acd85979, type: 2}
