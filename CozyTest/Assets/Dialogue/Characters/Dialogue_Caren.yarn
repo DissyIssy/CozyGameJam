@@ -1,0 +1,58 @@
+﻿title: Caren_New
+---
+Caren: So, you're the... What? The busboy? Your uniform is rather lacklustre.
+Caren: I haven't even received a complimentary drink yet.
+Caren: Dreadful service. Hmpf!
+<<CharacterChangeState CharacterStateManager Caren TaskGiving>>
+===
+
+title: Caren_TaskGiving
+---
+Caren: While you're already about, you should fetch me my hat. The wind blew it off my head just a moment ago.
+Caren: Why don't I get it myself? None of your business.
+Caren: Unlike you bringing me my hat, which is literally your job.
+<<CharacterChangeState CharacterStateManager Caren TaskDuring>>
+===
+
+
+title: Caren_Normal
+---
+<<set $nextText to random_range(1,3)>>
+
+<<if $nextText == 1>>
+	Snooty: The sea air smells nice but is horrible for my fur.
+<<elseif $nextText == 2>>
+	Snooty: Go on a cruise, they said. It'll be fun, they said.
+	Snooty: All I see is water, water, and more water. The... pinnacle of entertainment.
+<<elseif $nextText == 3>>
+	Snooty: Go be a darling and take a step to the left.
+	Snooty: You're standing in my sun.
+<<else>>
+	Snooty: Hmpf!
+<<endif>>
+===
+
+title: Caren_TaskDuring
+---
+<<if HasItem("Hat")>>
+	<<DeleteHeldItem>>
+	<<CharacterChangeState CharacterStateManager Caren TaskReporting>>
+<<elseif IsHoldingSomething()>>
+	Caren: That is NOT MY HAT.
+<<else>>
+	Caren: My head. It feels dreadfully empty. Maybe somebody should go do something about that.
+	Caren: Don't make me repeat myself.
+<<endif>>
+===
+
+title: Caren_TaskReporting
+---
+Caren: "Oh my god, my hat! Thank you so much!"
+Caren: Is that what you would like to hear?
+Caren: Hmm... No.
+Caren: I guess you... You...
+Caren: I feel watched. But it's only you, right?
+Caren: Why does my skin crawl like this?
+Caren: Please... please make them stop looking at me. 
+<<CharacterChangeState CharacterStateManager Caren Normal>>
+===

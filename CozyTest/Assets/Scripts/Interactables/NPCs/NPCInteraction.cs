@@ -6,7 +6,7 @@ using GameEvents.Manager;
 public class NPCInteraction : InteractableBase
 {
     [SerializeField] private SO_PassengerInfo passengerInfo;
-    [SerializeField] Enum_NPCState NPCState;
+    public Enum_NPCState NPCState;
 
 
     private void OnEnable()
@@ -25,24 +25,19 @@ public class NPCInteraction : InteractableBase
         {
             case Enum_NPCState.New:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_New);
-                NPCState = Enum_NPCState.Normal;
+                break;
+            case Enum_NPCState.Normal:
+                dialogueRunner.StartDialogue(passengerInfo.yarnID_Normal);
                 break;
             case Enum_NPCState.TaskGiving:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskGiving);
                 TaskManager.Instance.StartTask();
                 break;
-            case Enum_NPCState.Normal:
-                dialogueRunner.StartDialogue(passengerInfo.yarnID_Normal);
-                break;
-            case Enum_NPCState.off:
-                dialogueRunner.StartDialogue(passengerInfo.yarnID_Off);
-                break;
-            case Enum_NPCState.gone:
-                dialogueRunner.StartDialogue(passengerInfo.yarnID_Gone);
+            case Enum_NPCState.TaskDuring:
+                dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskDuring);
                 break;
             case Enum_NPCState.TaskReporting:
                 dialogueRunner.StartDialogue(passengerInfo.yarnID_TaskReporting);
-                NPCState = Enum_NPCState.Normal;
                 break;
             default:
                 Debug.LogWarning("NPC has no state");

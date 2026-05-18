@@ -78,5 +78,8 @@ public class PlayerHeldObject : MonoBehaviour
     public void DeleteObject()
     {
         Destroy(currentObject);
+        currentObject = null;
+        lightItemScript = null;
+        holdsItem = false;
     }
 }

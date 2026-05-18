@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a9ae971fcc28054d8fe18a0a3e98160, type: 3}
-  m_Name: Snooty
+  m_Name: Caren
   m_EditorClassIdentifier: Assembly-CSharp::SO_PassengerInfo
-  passengerName: Snooty
-  yarnID_New: Snooty_New
-  yarnID_TaskGiving: Snooty_TaskGiving
-  yarnID_Normal: Snooty_Normal
-  yarnID_Off: Snooty_Off
-  yarnID_Gone: Snooty_Gone
+  yarnID_New: Caren_New
+  yarnID_Normal: Caren_Normal
+  yarnID_TaskGiving: Caren_TaskGiving
+  yarnID_TaskDuring: Caren_TaskDuring
+  yarnID_TaskReporting: Caren_TaskReporting
