@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_TaskInfo
   taskName: Cleanup1
   taskType: 0
-  numberOfCleanUps: 2
+  numberOfCleanUps: 3
   itemIDToFetch: 
