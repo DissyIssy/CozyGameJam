@@ -52,9 +52,9 @@ Caren: "Oh my god, my hat! Thank you so much!"
 Caren: Is that what you would like to hear?
 <<StopMusic>>
 Caren: Hmm... No.
-Caren: I guess you... You...
-Caren: I feel watched. But it's only you, right?
-Caren: Why does my skin crawl like this?
-Caren: Please... please make them stop looking at me. 
+Caren: <i>I guess you... You...<i>
+Caren: <i>I feel watched. But it's only you, right?<i>
+Caren: <i>Why does my skin crawl like this?<i>
+Caren: <i>Please... please make them stop looking at me.<i>
 <<CharacterChangeState CharacterStateManager Caren Normal>>
 ===
