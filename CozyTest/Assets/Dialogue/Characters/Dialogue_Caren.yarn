@@ -50,6 +50,7 @@ title: Caren_TaskReporting
 <<PutOnHat>>
 Caren: "Oh my god, my hat! Thank you so much!"
 Caren: Is that what you would like to hear?
+<<StopMusic>>
 Caren: Hmm... No.
 Caren: I guess you... You...
 Caren: I feel watched. But it's only you, right?

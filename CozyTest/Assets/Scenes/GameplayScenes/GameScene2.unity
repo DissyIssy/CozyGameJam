@@ -163,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a413a294297b79a45ab8dd2c065b9581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  dialogueRunner: {fileID: 1074575393}
   sfxPlayer: {fileID: 1108153707}
+  backgroundPlayer: {fileID: 628201096}
   glitchSound: {fileID: 8300000, guid: 69eedf39ae2fb2f458e9efaeee9d8f57, type: 3}
   pickUpSound: {fileID: 8300000, guid: 18e27b146b781284e9df84954ecbcd0a, type: 3}
 --- !u!1001 &15102261

@@ -5,8 +5,10 @@ using Yarn.Unity;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
+    [SerializeField] private DialogueRunner dialogueRunner;
     public AudioSource sfxPlayer;
-    
+    public AudioSource backgroundPlayer;
+
     [Header("Sounds")]
     public AudioClip glitchSound;
     public AudioClip pickUpSound;
@@ -18,12 +20,21 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        if (dialogueRunner != null)
+        {
+            dialogueRunner.AddCommandHandler("StopMusic", StopMusic);
+            dialogueRunner.AddCommandHandler<string>("PlaySFX", PlaySFX);
+        }
+        else
+        {
+            Debug.LogError($"DialogueRunner missing on {gameObject.name}! Can't register PutOnHat.");
+        }
     }
 
-    //Can be called from dialogue, needs to be converted to string since yarnspinner only understands basic types
-    [YarnCommand("PlaySFX")]
     public void PlaySFX(string soundName)
     {
         AudioClip clipToPlay = null;
@@ -42,5 +53,14 @@ public class SoundManager : MonoBehaviour
                 return;
         }
         sfxPlayer.PlayOneShot(clipToPlay);
+    }
+
+    public void StopMusic()
+    {
+        if (backgroundPlayer != null)
+        {
+            Debug.Log("stop Music");
+            backgroundPlayer.Stop();
+        }
     }
 }
