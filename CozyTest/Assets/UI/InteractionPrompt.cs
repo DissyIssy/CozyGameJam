@@ -58,7 +58,6 @@ public class InteractionPrompt : MonoBehaviour
 
             if (interactableBase is LightItem lightItem)
             {
-                Debug.Log($"Encountered a pickup item named");
                 targetToFollow = e.interactableTransform;
                 currentOffset = e.offset;
                 InspectText.SetActive(true);
@@ -66,14 +65,12 @@ public class InteractionPrompt : MonoBehaviour
             }
             else if (interactableBase is NPCInteraction npcInteraction)
             {
-                Debug.Log($"Encountered a NPC item named");
                 targetToFollow = e.interactableTransform;
                 currentOffset = e.offset;
                 TalkText.SetActive(true);
             }
             else
             {
-                Debug.Log("No known item");
                 return;
             }
         }
