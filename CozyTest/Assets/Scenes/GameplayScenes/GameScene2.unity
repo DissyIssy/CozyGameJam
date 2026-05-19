@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   sfxPlayer: {fileID: 1108153707}
-  glitchSound: {fileID: 8300000, guid: 48d549f01078d114daec1739e8591bc3, type: 3}
+  glitchSound: {fileID: 8300000, guid: 69eedf39ae2fb2f458e9efaeee9d8f57, type: 3}
   pickUpSound: {fileID: 8300000, guid: 18e27b146b781284e9df84954ecbcd0a, type: 3}
 --- !u!1001 &15102261
 PrefabInstance:
