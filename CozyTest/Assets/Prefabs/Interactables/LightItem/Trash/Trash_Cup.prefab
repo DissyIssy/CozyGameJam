@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6967296418195330916}
   - component: {fileID: 5772976126480475006}
   - component: {fileID: 5422598192836341140}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2972653912377816301, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4864528280440201773, guid: bb94493d407ccda438ced7187129df9f, type: 3}
       propertyPath: m_Enabled
