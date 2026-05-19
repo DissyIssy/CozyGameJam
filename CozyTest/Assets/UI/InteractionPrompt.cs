@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 public class InteractionPrompt : MonoBehaviour
 {
+    [SerializeField] private GameObject TalkText;
     [SerializeField] private GameObject InspectText;
     [SerializeField] private GameObject PickUpText;
     [SerializeField] private float gapBetweenPrompts = 0.5f;
@@ -33,6 +34,11 @@ public class InteractionPrompt : MonoBehaviour
             InspectText.transform.position = targetToFollow.position + currentOffset;
         }
 
+        if (TalkText != null && TalkText.activeSelf)
+        {
+            TalkText.transform.position = targetToFollow.position + currentOffset;
+        }
+
         if (PickUpText != null && PickUpText.activeSelf)
         {
             Vector3 verticalGap = new Vector3(0, gapBetweenPrompts, 0);
@@ -42,18 +48,34 @@ public class InteractionPrompt : MonoBehaviour
 
     void OnEnteredInteractableTriggerEvent(EnteredInteractableTrigger_Event e)
     {
-        if (InspectText != null)
-        {
-            targetToFollow = e.interactableTransform;
-            currentOffset = e.offset;
-            InspectText.SetActive(true);
-        }
+        Transform interactableTransform = e.interactableTransform;
 
-        if (PickUpText != null && e.isPickUpAble)
+        if (interactableTransform.TryGetComponent<InteractableBase>(out InteractableBase interactableBase))
         {
-            targetToFollow = e.interactableTransform;
-            currentOffset = e.offset;
-            PickUpText.SetActive(true);
+            if (InspectText != null) InspectText.SetActive(false);
+            if (PickUpText != null) PickUpText.SetActive(false);
+            if (TalkText != null) TalkText.SetActive(false);
+
+            if (interactableBase is LightItem lightItem)
+            {
+                Debug.Log($"Encountered a pickup item named");
+                targetToFollow = e.interactableTransform;
+                currentOffset = e.offset;
+                InspectText.SetActive(true);
+                PickUpText.SetActive(true);
+            }
+            else if (interactableBase is NPCInteraction npcInteraction)
+            {
+                Debug.Log($"Encountered a NPC item named");
+                targetToFollow = e.interactableTransform;
+                currentOffset = e.offset;
+                TalkText.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No known item");
+                return;
+            }
         }
     }
 
@@ -67,6 +89,11 @@ public class InteractionPrompt : MonoBehaviour
         if (PickUpText != null)
         {
             PickUpText.SetActive(false);
+        }
+
+        if (TalkText != null)
+        {
+            TalkText.SetActive(false);
         }
         
         targetToFollow = null;
