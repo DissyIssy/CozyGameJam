@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkingSpeed = 2f; //walkingSpeed variable use in calculating player velocity
     [SerializeField] private float runningSpeed = 4f; //runningSpeed variable use in calculating player velocity
     [SerializeField] private float gravity = -20f; //runningSpeed variable use in calculating player velocity
-    [SerializeField] private float pushWalkForce = 5f;
-    [SerializeField] private float pushRunForce = 10f;
+    [SerializeField] private float pushWalkForce = 2f;
+    [SerializeField] private float pushRunForce = 3f;
     private Vector3 playerVelocity; //use in gravity method
     private float storedSpeed = 2f; //use to store what speed the player should be moving based off running or walking
     private bool isWalking = true; //the bool to set what player speed is stored
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         float currentPushForce = isWalking ? pushWalkForce : pushRunForce;
         
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-        rb.AddForce(pushDir * currentPushForce, ForceMode.Impulse);
+        rb.AddForce(pushDir * currentPushForce, ForceMode.Force);
     }
     
     private void HandleAnimation()
