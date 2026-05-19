@@ -36,7 +36,7 @@ title: Caren_TaskDuring
 ---
 <<if HasItem("Hat")>>
 	<<DeleteHeldItem>>
-	<<CharacterChangeState CharacterStateManager Caren TaskReporting>>
+	<<jump Caren_TaskReporting>>
 <<elseif IsHoldingSomething()>>
 	Caren: That is NOT MY HAT.
 <<else>>
